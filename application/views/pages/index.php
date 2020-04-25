@@ -32,7 +32,7 @@
 						<span class="logo-text">
 							<!-- dark Logo text -->
 							<div class="mt-3">
-								<h3>Geographic Information System</h3>
+								<h3>Peta Sebaran Covid-19</h3>
 							</div>
 						</span>
 					</a>
@@ -45,6 +45,12 @@
 				<!-- ============================================================== -->
 			</nav>
 		</header>
+		<div id="mapid"></div>
+		<script>
+			var map = L.map('mapid').setView([-4.016667, 119.623611], 7);
+			var layer = L.esri.basemapLayer('Imagery').addTo(map);
+			map.addLayer(layer);
+		</script>
 		<footer class="footer text-center">
 			All Rights Reserved by Xtreme Admin. Designed and Developed by <a href="https://wrappixel.com">WrapPixel</a>.
 		</footer>

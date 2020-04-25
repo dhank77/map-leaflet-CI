@@ -10,11 +10,21 @@
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="<?= base_url('vendor/xtreme/') ?>assets/images/favicon.png">
-    <title>Codeigniter | Website GIS</title>
+    <title>Peta Sebaran | Website GIS</title>
     <!-- Custom CSS -->
     <link href="<?= base_url('vendor/xtreme/') ?>assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="<?= base_url('vendor/xtreme/') ?>dist/css/style.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?= base_url('assets/leaflet/') ?>leaflet.css">
+    <script src="<?= base_url('assets/leaflet/') ?>leaflet.js"></script>
+    <script src="https://unpkg.com/esri-leaflet@2.3.3/dist/esri-leaflet.js"></script>
+
+    <style>
+        #mapid {
+            height: 600px;
+            z-index: 1;
+        }
+    </style>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
