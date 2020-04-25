@@ -1,4 +1,3 @@
-# Codeigniter-Web-GIS
-Website Geographic Information System with Codeigniter
+Website MAP Leaflet with Codeigniter
 # map-leaflet-CI
 # map-leaflet-CI
