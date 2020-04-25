@@ -20,6 +20,10 @@
     <script src="https://unpkg.com/esri-leaflet@2.3.3/dist/esri-leaflet.js"></script>
 
     <style>
+        .table-striped tbody tr:nth-child(odd) td,
+        .table-striped tbody tr:nth-child(odd) th {
+            background-color: #f1f5fc;
+        }
         #mapid {
             height: 600px;
             z-index: 1;

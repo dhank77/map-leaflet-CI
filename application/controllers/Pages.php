@@ -16,7 +16,7 @@ class Pages extends CI_Controller
                     'coordinates' => [floatval($m['countryInfo']['lat']), floatval($m['countryInfo']['long'])],
                 ],
                 'properties' => [
-                    'title' => $m['country'],
+                    'title' => str_replace("'", "" , $m['country']),
 					'icon' => $m['countryInfo']['flag'],
 					'total' => $m['cases'],
 					'active' => $m['active'],
@@ -26,11 +26,12 @@ class Pages extends CI_Controller
             ];
             array_push($array_data, $array);
 		}
-		$data['data'] = $array_data;
+		$data['data_covid'] = json_encode($array_data);
 		$this->load->view('layouts/header');
 		$this->load->view('pages/index', $data);
 		$this->load->view('layouts/js');
 	}
+	
 
 	private function getData(){
 		$curl = curl_init();

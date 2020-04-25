@@ -47,30 +47,28 @@
 		</header>
 		<div id="mapid"></div>
 		<script>
-			var map = L.map('mapid').setView([-4.016667, 119.623611], 7);
+			var map = L.map('mapid').setView([0, 0], 2);
 			var layer = L.esri.basemapLayer('Imagery').addTo(map);
 			map.addLayer(layer);
-
-			const icon = L.icon({
-				iconUrl: '<?= base_url() ?>',
-				className: 'marker'
-			});
-			var odp = '<?= file_get_contents('https://corona.lmao.ninja/v2/countries') ?>';
-			var data = JSON.parse(odp);
+			var covid = '<?= $data_covid ?>';
+			var data = JSON.parse(covid);
 			console.log(data);
-			// data.forEach(alldata)
-
-			// function alldata(item) {
-			// 	L.marker(item.geometry.coordinates, {
-			// 			icon: icon
-			// 		}).addTo(map)
-			// 		.bindTooltip('', {
-			// 			direction: 'top'
-			// 		});
-			// }
+			data.forEach(alldata)
+			function alldata(item) {
+				const icon = L.icon({
+					iconUrl: item.properties.icon,
+					iconSize: [15, 10],
+				});
+				L.marker(item.geometry.coordinates, {
+						icon: icon
+					}).addTo(map)
+					.bindTooltip('<p style="font-size: 12px; color:black; line-height:14px; margin-bottom:0px;"><b style="text-align:center">' + item.properties.title + '</b><br> Cases : ' + item.properties.total + '<br> Active : ' + item.properties.active + '<br> Recoverd : ' + item.properties.recovered + '<br> Deaths : ' + item.properties.deaths + '</p>', {
+						direction: 'top'
+					});
+			}
 		</script>
 		<footer class="footer text-center">
-			All Rights Reserved by Xtreme Admin. Designed and Developed by <a href="https://wrappixel.com">WrapPixel</a>.
+			Developed by <a href="https://www.facebook.com/andank.parawali">Hamdani Ilham</a> Theme Designed and Developed by <a href="https://wrappixel.com">WrapPixel</a>.
 		</footer>
 	</div>
 </body>
