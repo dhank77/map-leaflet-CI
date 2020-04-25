@@ -52,7 +52,6 @@
 			map.addLayer(layer);
 			var covid = '<?= $data_covid ?>';
 			var data = JSON.parse(covid);
-			console.log(data);
 			data.forEach(alldata)
 			function alldata(item) {
 				const icon = L.icon({
