@@ -50,6 +50,24 @@
 			var map = L.map('mapid').setView([-4.016667, 119.623611], 7);
 			var layer = L.esri.basemapLayer('Imagery').addTo(map);
 			map.addLayer(layer);
+
+			const icon = L.icon({
+				iconUrl: '<?= base_url() ?>',
+				className: 'marker'
+			});
+			var odp = '<?= file_get_contents('https://corona.lmao.ninja/v2/countries') ?>';
+			var data = JSON.parse(odp);
+			console.log(data);
+			// data.forEach(alldata)
+
+			// function alldata(item) {
+			// 	L.marker(item.geometry.coordinates, {
+			// 			icon: icon
+			// 		}).addTo(map)
+			// 		.bindTooltip('', {
+			// 			direction: 'top'
+			// 		});
+			// }
 		</script>
 		<footer class="footer text-center">
 			All Rights Reserved by Xtreme Admin. Designed and Developed by <a href="https://wrappixel.com">WrapPixel</a>.
